@@ -1,0 +1,62 @@
+﻿<Window x:Class="FilesUndelitingFAT32.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" MinHeight="512" MaxHeight="512" MinWidth="512" Width="512" MaxWidth="512" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="5,0,5,0"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5,2,5,2"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <TextBlock>Максимальный размер восстанавливаемых файлов (в мб)</TextBlock>
+        <TextBox x:Name="MaxRecoverySizeTB" PreviewTextInput="MaxRecoverySizeTB_PreviewTextInput" Width="100" HorizontalAlignment="Left">50</TextBox>
+        <Button x:Name="chooseDriveBtn" Click="chooseDriveBtn_Click">Выбрать флешку для восстановления</Button>
+
+
+
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel>
+                <TextBlock>Флешка</TextBlock>
+                <TextBox x:Name="tbName" IsEnabled="False"></TextBox>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Файловая система</TextBlock>
+                <TextBox x:Name="tbFileSystem" IsEnabled="False"></TextBox>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Вместимость</TextBlock>
+                <TextBox x:Name="tbTotal" IsEnabled="False"></TextBox>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Свободно</TextBlock>
+                <TextBox x:Name="tbFree" IsEnabled="False"></TextBox>
+            </StackPanel>
+
+        </StackPanel>
+
+        <TextBlock Margin="5,15,0,0">Конечная директория:</TextBlock>
+        <Button x:Name="ChangeRecoveryDirBtn" Margin="5,5,0,5" Click="ChangeRecoveryDirBtn_Click">Сменить директорию для восстановления</Button>
+        <TextBox x:Name="RecoveryDirTB" FontSize="10" Foreground="Gray" IsEnabled="False">Директория для восстановления не выбрана.</TextBox>
+        <Button x:Name="StartRecovery" Click="StartRecovery_Click">Начать восстановление</Button>
+
+
+    </StackPanel>
+</Window>
